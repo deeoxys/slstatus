@@ -65,8 +65,8 @@ static const struct arg args[] = {
 	/* function, format, argument */
     //{ username, " %s@", NULL },
     //{ hostname, " %s | ", NULL },
-    { run_command, " %sms |", "ping 1.1.1.1 -c 1 | grep from | awk '\"$1==time=\" {print $7}' | cut -c 6-" },
-    { cpu_perc, "  %s%%", NULL },
+    { run_command, " %sms", "ping 1.1.1.1 -c 1 | grep from | awk '\"$1==time=\" {print $7}' | cut -c 6-" },
+    //{ cpu_perc, "  %s%%", NULL },
 	//{ ram_used, " |  %s", NULL },
 	{ ram_used, " | %s", NULL },
 	{ run_command, " |  %s", "pactl list sinks | awk '$1==\"Volume:\" {print $5}'", },
@@ -74,5 +74,5 @@ static const struct arg args[] = {
     { battery_state, " | ⚡ %s", "BAT1" },
     { battery_perc, "%s%%", "BAT1" },
 	//{ datetime, " |  %s", "%a %d %b %T" },
-	{ datetime, " | %s", "%a %d %b %T" },
+	{ datetime, " | %s", "%a %d/%m %R" },
 };
